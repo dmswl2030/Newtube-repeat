@@ -1,9 +1,9 @@
 import express from "express";
+import { edit, remove } from "../controllers/userController";
 
-const userRouter = express.Router(); //라우터 변수를 생성
+const userRouter = express.Router();
 
-const handleEditUser = (req, res) => res.send("Edit User");
-
-userRouter.get("/", handleEditUser); //라우터를 핸들러에 연결
+userRouter.get("/edit", edit);
+userRouter.get("/remove", remove);
 
 export default userRouter;
